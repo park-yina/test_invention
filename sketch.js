@@ -13,20 +13,17 @@ function draw() {
 }
 class Walker{
   constructor(){
-    this.pos=createVector(width,height/2);
-    this.vel=createVector(-0.7,0.4);
+    this.pos=createVector(width,height);
+    this.vel=createVector(-0.3,0.2);
     this.acc=createVector(0,0);//처음 가속도는 0으로 세팅한다.
-    this.w=8;
+    this.w=4;
   }
    update(){
       if(this.pos.y>200){
-        this.acc=createVector(0.3,-4);
+        this.acc=createVector(0.01,-0.5);
       }
      if(this.pos.y<200){
-       this.acc=createVector(-0.35,3);
-     }
-     if(this.pos.x>390){
-       this.pos=createVector(this.pos.x-4,height/2);
+       this.acc=createVector(-0.04,0.5);
      }
      this.vel.add(this.acc);
      this.pos.add(this.vel);
